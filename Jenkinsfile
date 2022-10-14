@@ -44,7 +44,9 @@ agent any
             echo 'Analzying quality code.'
                 script {
             withSonarQubeEnv(credentialsId: 'sonar-api') {
-                sh "mvn clean package sonar:sonar" 
+               // sh "mvn clean package sonar:sonar" 
+                  sh "mvn  sonar:sonar" 
+
             }
 }
             }
