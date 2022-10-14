@@ -42,7 +42,7 @@ agent any
         stage ("Static code analysis WITH SONARQUBE"){
             steps {
             echo 'Analzying quality code.'
-                scripts {
+                script {
             withSonarQubeEnv(credentialsId: 'sonar-api') {
                 sh "mvn clean package sonar:sonar" 
             }
