@@ -38,6 +38,18 @@ agent any
                 
                 }
             }
+        
+        stage ("Static code analysis WITH SONARQUBE"){
+            steps {
+            
+            withSonarQubeEnv(credentialsId: 'sonar-api') {
+                // some block
+                sh "mvn clean package sonar:sonar"
+}
+            }
+            
+        
+        }
     
     
     }
