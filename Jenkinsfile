@@ -2,24 +2,7 @@ pipeline {
 agent any
     stages {
         
-       /* stage('MVN CLEAN'){
-            steps {
-                echo'clean...'
-            }
-        }
-        
-         stage('MVN COMPILE'){
-            steps {
-                echo'compile...'
-                
-            }
-        }
-        
-         stage('MVN SONARQUBE'){
-            steps {
-                echo'sonarqube'
-            }
-        } */
+
         // main SATGES
         stage ("Git checkout PLEAASE"){
             steps{
@@ -45,6 +28,14 @@ agent any
             }
         
         }
+        
+        stage ("Integration testing"){
+            {
+                steps {
+                sh "mvn verify -DskipUnitTests"
+                
+                }
+            }
     
     
     }
