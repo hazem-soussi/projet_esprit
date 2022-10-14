@@ -13,12 +13,14 @@ agent any
         }
     
         
-                stage('Build Project') {
+                stage('Maven Build Project') {
             steps {
                 echo "Build our project"
-                sh 'mvn package '
+                sh 'mvn clean install '
             }
         }
+        
+        
         
 
         
