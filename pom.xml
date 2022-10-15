@@ -69,6 +69,17 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
+			<executions>
+                <execution>
+                    <id>repackage</id>
+                    <goals>
+                        <goal>repackage</goal>
+                    </goals>
+                    <configuration>
+                        <finalName>tpachat</finalName>
+                    </configuration>
+                </execution>
+            </executions>
 		</dependency>
 	</dependencies>
 
