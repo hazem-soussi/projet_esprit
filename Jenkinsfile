@@ -47,10 +47,27 @@ agent any
                // sh "mvn clean package sonar:sonar" 
                   sh "mvn clean package sonar:sonar" 
 
-            }
-}
-            }
+                 }
+                }
+              }
             
+        }
+     
+        // ********************************** 
+        
+        stage ('Quality Gate Status'){
+            steps {
+                script{
+                    
+                    withSonarQubeEnv(credentialsId: 'hazem_esprit') {
+    // some block
+}
+                
+                
+                }
+            
+            }
+        
         
         }
     
