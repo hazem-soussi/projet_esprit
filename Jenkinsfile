@@ -39,7 +39,7 @@ agent any
                 }
             }
         
-        stage ("Static code analysis Quality Gate weith SONARQUBE"){
+        stage ("SONARQUBE Analysis"){
             steps {
             echo 'Analzying quality code.'
                 script {
