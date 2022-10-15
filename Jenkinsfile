@@ -43,7 +43,7 @@ agent any
             steps {
             echo 'Analzying quality code.'
                 script {
-            withSonarQubeEnv(credentialsId: 'hazem_sonar') {
+            withSonarQubeEnv(credentialsId: 'hazem_esprit') {
                // sh "mvn clean package sonar:sonar" 
                   sh "mvn  sonar:sonar" 
 
