@@ -45,7 +45,7 @@ agent any
                 script {
             withSonarQubeEnv(credentialsId: 'hazem_esprit') {
                // sh "mvn clean package sonar:sonar" 
-                  sh "mvn  sonar:sonar" 
+                  sh "mvn clean package sonar:sonar" 
 
             }
 }
