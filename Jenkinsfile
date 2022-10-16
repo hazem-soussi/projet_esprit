@@ -89,18 +89,18 @@ agent any
                         
                         
                         
-                      /*  nexusArtifactUploader artifacts: [[artifactId: 'tpAchatProject', classifier: ''
+                      / nexusArtifactUploader artifacts: [[artifactId: 'tpAchatProject', classifier: ''
                                                            , file: 'target/tpAchatProject-1.0.war',
                                                            type: 'war']],
                             credentialsId: 'nexus_auth', 
                             groupId: 'com.esprit.examen',
-                            nexusUrl: 'http://192.168.149.136:8081',
+                            nexusUrl: '192.168.149.136:8081',
                             nexusVersion: 'nexus2', 
                             protocol: 'http', 
                             repository: 'esprit_ci_cd',
-                            version: '1.0'*/
+                            version: '1.0'
                         
-                    def mavenPom = readMavenPom file: 'pom.xml'
+                  /* def mavenPom = readMavenPom file: 'pom.xml'
                     def nexusRepoName = mavenPom.version.endsWith("SNAPSHOT") ? "tpAchatProject-snapshot" : "tpAchatProject-release"
                     nexusArtifactUploader artifacts: [
                         [
@@ -117,7 +117,7 @@ agent any
                     protocol: 'http', 
                     repository: nexusRepoName, 
                     version: "${mavenPom.version}"
-                        
+                        */
                         
                         
                         
