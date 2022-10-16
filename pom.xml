@@ -85,7 +85,7 @@
                         <goal>repackage</goal>
                     </goals>
                     <configuration>
-                        <finalName>tpachat</finalName>
+                        <finalName>tpAchatProject</finalName>
                     </configuration>
                 </execution>
             </executions>
