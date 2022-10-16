@@ -79,9 +79,9 @@ agent any
 } 
         
             
- /*  stage (" Upload War To Nexus " ) {
-                steps {
-                    script {
+ //  stage (" Upload War To Nexus " ) {
+               // steps {
+                   // script {
                     /*nexusArtifactUploader artifacts: [[
                         artifactId: 'tpAchatProject', classifier: '',
                         
@@ -109,7 +109,7 @@ agent any
                             repository: 'esprit_ci_cd',
                             version: '1.0'*/
                         
-                        nexusArtifactUploader artifacts: [[artifactId: 'tpAchatProject',
+                      /*  nexusArtifactUploader artifacts: [[artifactId: 'tpAchatProject',
                                                            classifier: '',
                                                            file: 'target/tpAchatProject-1.0.0.war',
                                                            type: 'war']],
@@ -119,7 +119,7 @@ agent any
                             nexusVersion: 'nexus2',
                             protocol: 'http',
                             repository: 'esprit-app', 
-                            version: '1.0.0'
+                            version: '1.0.0'*/
                         
                         
                   /* def mavenPom = readMavenPom file: 'pom.xml'
@@ -143,12 +143,12 @@ agent any
                         
                         
                         
-                    }
+                   // }
                     
                     
-                }
+                //}
                 
-        } */
+    //    } 
     
     
     }
