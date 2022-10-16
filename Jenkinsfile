@@ -89,7 +89,7 @@ agent any
                         
                         
                         
-                      / nexusArtifactUploader artifacts: [[artifactId: 'tpAchatProject', classifier: ''
+                      nexusArtifactUploader artifacts: [[artifactId: 'tpAchatProject', classifier: ''
                                                            , file: 'target/tpAchatProject-1.0.war',
                                                            type: 'war']],
                             credentialsId: 'nexus_auth', 
