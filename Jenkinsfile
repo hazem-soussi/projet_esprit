@@ -70,13 +70,15 @@ agent any
             }
         }
             
-            stage (" upload war file to nexus " ) {
+   stage (" upload war file to nexus " ) {
                 steps {
                     script {
                     nexusArtifactUploader artifacts: [[
                         artifactId: 'tpAchatProject', classifier: '',
+                        
                         file: ' target/Timesheet-spring-boot-core-data-jpa-mvc-REST-1-6.0.war',
-                     //  'target/tpAchatProject.jar', type: 'jar']], 
+                      // 'target/tpAchatProject.jar',
+                        type: 'jar']], 
                         credentialsId: 'nexus_auth',
                         groupId: 'com.esprit.examen', 
                         nexusUrl: 'localhost:8081', 
@@ -84,7 +86,6 @@ agent any
                         repository: 'esprit_ci_cd', 
                         version: '1.0'
                     }
-                    
                     
                     
                 }
