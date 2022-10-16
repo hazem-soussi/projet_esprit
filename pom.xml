@@ -9,10 +9,11 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.esprit.examen</groupId>
-	<artifactId>tpAchatProject</artifactId>
-	<version>1.0</version>
-	<name>tpAchatProject</name>
-	<description>tpAchatProject</description>
+	<artifactId>Timesheet-spring-boot-core-data-jpa-mvc-REST-1</artifactId>
+	<version>6.0</version>
+	<packaging>war</packaging>
+	<name>Timesheet-spring-boot-core-data-jpa-mvc-REST-1</name>
+	<description>Timesheet-spring-boot-core-data-jpa-mvc-REST-1</description>
 	<properties>
 		<java.version>1.8</java.version>
 		<maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
