@@ -70,7 +70,7 @@ agent any
             }
         }
             
-   stage (" upload war file to nexus " ) {
+   stage (" Upload War To Nexus " ) {
                 steps {
                     script {
                     /*nexusArtifactUploader artifacts: [[
