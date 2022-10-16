@@ -75,8 +75,7 @@ agent any
                     script {
                     nexusArtifactUploader artifacts: [[
                         artifactId: 'tpAchatProject', classifier: '',
-                        
-                        file: ' target/Timesheet-spring-boot-core-data-jpa-mvc-REST-1-6.0.war'
+                        file: ' target/Timesheet-spring-boot-core-data-jpa-mvc-REST-1-6.0.war',
                      //  'target/tpAchatProject.jar', type: 'jar']], 
                         credentialsId: 'nexus_auth',
                         groupId: 'com.esprit.examen', 
