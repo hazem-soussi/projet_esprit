@@ -66,7 +66,7 @@ agent any
      
         // ********************************** 
         
-        stage ('Quality Gate Status'){
+       /* stage ('Quality Gate Status'){
             steps {
                 script{
                     withSonarQubeEnv(credentialsId: 'sonar_hazoum', installationName: 'sonarqube_server') {
@@ -80,7 +80,7 @@ agent any
             }
         }
         
-           stage("Publish to Nexus Repository Manager") {
+          /* stage("Publish to Nexus Repository Manager") {
             steps {
                 script {
                     pom = readMavenPom file: "pom.xml";
