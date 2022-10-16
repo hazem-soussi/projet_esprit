@@ -75,7 +75,7 @@ agent any
                     script {
                     nexusArtifactUploader artifacts: [[
                         artifactId: 'tpAchatProject', classifier: '',
-                        file: 'target/tpachat.jar', type: 'jar']], 
+                        file: 'target/tpAchatProject.jar', type: 'jar']], 
                         credentialsId: 'nexus_auth',
                         groupId: 'com.esprit.examen', 
                         nexusUrl: 'localhost:8081', 
