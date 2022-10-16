@@ -90,7 +90,7 @@ agent any
                         
                         
                         nexusArtifactUploader artifacts: [[artifactId: 'tpAchatProject', classifier: ''
-                                                           , file: 'target/tpAchatProject-6.0.war',
+                                                           , file: 'target/tpAchatProject.war',
                                                            type: 'war']],
                             credentialsId: 'nexus_auth', 
                             groupId: 'com.esprit.examen', nexusUrl: 'http://192.168.149.136:8081',
