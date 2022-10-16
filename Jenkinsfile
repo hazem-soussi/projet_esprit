@@ -90,10 +90,11 @@ agent any
                         
                         
                         nexusArtifactUploader artifacts: [[artifactId: 'tpAchatProject', classifier: ''
-                                                           , file: 'target/tpAchatProject.war',
+                                                           , file: 'target/tpAchatProject-1.0.war',
                                                            type: 'war']],
                             credentialsId: 'nexus_auth', 
-                            groupId: 'com.esprit.examen', nexusUrl: 'http://192.168.149.136:8081',
+                            groupId: 'com.esprit.examen',
+                            nexusUrl: 'http://192.168.149.136:8081',
                             nexusVersion: 'nexus2', 
                             protocol: 'http', 
                             repository: 'esprit_ci_cd',
