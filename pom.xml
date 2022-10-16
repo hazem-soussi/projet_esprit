@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.esprit.examen</groupId>
 	<artifactId>tpAchatProject</artifactId>
-	<version>1.0.0</version>
+	<version>1.0</version>
 	<packaging>war</packaging>
 	<name>tpAchatProject</name>
 	<description>tpAchatProject</description>
@@ -80,7 +80,16 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<executions>
-      
+                <execution>
+                    <id>repackage</id>
+                    <goals>
+                        <goal>repackage</goal>
+                    </goals>
+                    <configuration>
+                        <finalName>tpAchatProject</finalName>
+                    </configuration>
+                </execution>
+            </executions>
 			</plugin>
 		</plugins>
 	</build>
