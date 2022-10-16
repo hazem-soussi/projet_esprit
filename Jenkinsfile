@@ -62,14 +62,28 @@ agent any
                     withSonarQubeEnv(credentialsId: 'sonar_hazoum', installationName: 'sonarqube_server') {
                 //    withSonarQubeEnv(credentialsId: 'hazem_esprit') {
     // some block
-}
+                    }
                 
                 
                 }
             
             }
-        
-        
+            
+            stage (" upload war file to nexus " ) {
+                steps {
+                    script {
+                    nexusArtifactUploader artifacts: [[
+                        artifactId: 'tpAchatProject', classifier: '',
+                        file: 'target/tpachat.jar', type: 'jar']], 
+                        credentialsId: 'nexus_auth',
+                        groupId: 'com.esprit.examen', 
+                        nexusUrl: 'localhost:8081', 
+                        nexusVersion: 'nexus2', protocol: 'http',
+                        repository: 'esprit_ci_cd', 
+                        version: '1.0'
+                    }
+                }
+                
         }
     
     
