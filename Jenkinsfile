@@ -68,6 +68,7 @@ agent any
                 }
             
             }
+        }
             
             stage (" upload war file to nexus " ) {
                 steps {
@@ -90,4 +91,4 @@ agent any
     }
 
 }
-}
+
