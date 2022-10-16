@@ -69,8 +69,17 @@ agent any
             
             }
         }
+        
+        
+             stage("6th stage : packaging & deploy stage ") {
+        steps
+        {
+            sh "mvn clean -DskipTests package deploy:deploy-file -DgroupId=com.esprit.examen -DartifactId=tpAchatProject -Dversion=1.0.0 -DgeneratePom=true -Dpackaging=war -DrepositoryId=esprit-app -Durl=http://192.168.149.136:8081/repository/maven-releases/ -Dfile=target/tpAchatProject-1.0.0.war"
+        }
+} 
+        
             
-   stage (" Upload War To Nexus " ) {
+ /*  stage (" Upload War To Nexus " ) {
                 steps {
                     script {
                     /*nexusArtifactUploader artifacts: [[
@@ -139,7 +148,7 @@ agent any
                     
                 }
                 
-        }
+        } */
     
     
     }
