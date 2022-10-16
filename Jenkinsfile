@@ -98,7 +98,7 @@ agent any
                             nexusVersion: 'nexus2', 
                             protocol: 'http', 
                             repository: 'esprit_ci_cd',
-                            version: '6.0'
+                            version: '1.0'
                     }
                     
                     
