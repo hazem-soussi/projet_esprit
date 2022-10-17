@@ -14,7 +14,7 @@ agent any
         
 
         // main SATGES
-        stage ("Git checkout PLEAASE"){
+        stage ("1st stage : Git checkout PLEAASE"){
             steps{
         git branch: 'main', 
             url: 'https://github.com/hazem-soussi/projet_esprit.git'
@@ -23,7 +23,7 @@ agent any
         }
     
         
-                stage('Maven Build Project') {
+                stage('2nd Stage : Maven Build Project') {
             steps {
                 echo "Build our project"
                 sh 'mvn clean install '
@@ -34,14 +34,14 @@ agent any
         
 
         
-             stage ("unit testing"){
+             stage ("3rd Stage : unit testing"){
             steps{
                 sh "mvn test"
             }
         
         }
         
-        stage ("Integration testing"){
+        stage ("4th Stage : Integration testing"){
             
                 steps {
                 sh "mvn verify -DskipUnitTests"
@@ -49,7 +49,7 @@ agent any
                 }
             }
         
-        stage ("SONARQUBE Analysis"){
+        stage ("5th Stage : SONARQUBE Analysis"){
             steps {
             echo 'Analzying quality code.'
                 script {
@@ -78,9 +78,9 @@ agent any
                 }
             
             }
-        }
+        }*/
         
-          /* stage("Publish to Nexus Repository Manager") {
+           stage("6th Stage : Publish to Nexus Repository Manager") {
             steps {
                 script {
                     pom = readMavenPom file: "pom.xml";
