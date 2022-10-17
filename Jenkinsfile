@@ -9,7 +9,7 @@ agent any
         NEXUS_REPOSITORY = "esprit-app"
         NEXUS_CREDENTIAL_ID = "nexus_auth"
         registry = "hazem1998/esprit_app"
-        registryCredential= 'docker_imagePWD'
+        registryCredential= 'dockerHub'
         dockerImage=''
     }
     
@@ -136,7 +136,7 @@ agent any
                 steps {
                     script {
                     docker.withRegistry( '', registryCredential) {
-                     dockerImage.push() // push image to docker hub
+                     dockerImage.push() 
                 }
                     }
                 }
