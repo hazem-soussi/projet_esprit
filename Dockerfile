@@ -6,9 +6,10 @@ RUN mvn clean install
 
 CMD mvn spring-boot:run
 
-FROM openjdk:11.0
-WORKDIR /spring-app
-COPY --from=build /app/target/tpAchatProject-1.0.war /spring-app/
-EXPOSE 9090
-CMD ["java","war","tpAchatProject-1.0.war"]
+
+FROM openjdk:8-jdk-alpine
+EXPOSE 8081
+ADD target/*.war /
+ENTRYPOINT ["java", "-jar", "TpAchatProject-1.0.war "]
+
 
