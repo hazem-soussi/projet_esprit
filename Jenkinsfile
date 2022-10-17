@@ -8,9 +8,6 @@ agent any
         NEXUS_URL = "192.168.149.136:8081"
         NEXUS_REPOSITORY = "esprit-app"
         NEXUS_CREDENTIAL_ID = "nexus_auth"
-        registry = "hazem1998/esprit_app"
-        registryCredential= 'dockerHub'
-        dockerImage=''
     }
     
     stages {
@@ -69,19 +66,19 @@ agent any
      
         // ********************************** 
         
-       /* stage ('Quality Gate Status'){
+       stage ('Quality Gate Status'){
             steps {
                 script{
                     withSonarQubeEnv(credentialsId: 'sonar_hazoum', installationName: 'sonarqube_server') {
                 //    withSonarQubeEnv(credentialsId: 'hazem_esprit') {
     // some block
-                    }
+                   // }
                 
                 
                 }
             
             }
-        }*/
+        }
         
            stage("6th Stage : Publish to Nexus Repository Manager") {
             steps {
@@ -132,16 +129,8 @@ agent any
         }
         }
         
-                   stage('Deploy  image') {
-                steps {
-                    script {
-                    docker.withRegistry( '', registryCredential) {
-                     dockerImage.push() 
-                }
-                    }
-                }
-           }
-       /* stage ("Push image to dockerHUb") {
+        
+        stage ("Push image to dockerHUb") {
         
             steps {
                 script {
@@ -149,7 +138,13 @@ agent any
                         sh "docker login -u hazem1998 -p ${docker_imagePWD}"
                     sh 'docker image push hazem1998/$JOB_NAME:v1.$BUILD_ID'
                     sh 'docker image push hazem1998/$JOB_NAME:latest '}
-         }
+                    
+                  
+                    
+                    
+                    
+          
+                }
             
             }
         
