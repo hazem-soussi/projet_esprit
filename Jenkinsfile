@@ -137,7 +137,7 @@ agent any
                     
                     
                     withCredentials([string(credentialsId: 'docker-hub', variable: 'docker_auth')]) {
-                    sh 'docker login -u hazem1998 -p $(docker_hub)'
+                    sh 'docker login -u hazem1998 -p $(docker_auth)'
                     sh 'docker image push hazem1998/$JOB_NAME:v1.$BUILD_ID'
                     sh 'docker image push hazem1998/$JOB_NAME:latest '}
                     
