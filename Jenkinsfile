@@ -8,6 +8,9 @@ agent any
         NEXUS_URL = "192.168.149.136:8081"
         NEXUS_REPOSITORY = "esprit-app"
         NEXUS_CREDENTIAL_ID = "nexus_auth"
+        registry = "hazem1998/esprit_app"
+        registryCredential= 'docker_imagePWD'
+        dockerImage=''
     }
     
     stages {
@@ -129,8 +132,16 @@ agent any
         }
         }
         
-        
-        stage ("Push image to dockerHUb") {
+                   stage('Deploy  image') {
+                steps {
+                    script {
+                    docker.withRegistry( '', registryCredential) {
+                     dockerImage.push() // push image to docker hub
+                }
+                    }
+                }
+           }
+       /* stage ("Push image to dockerHUb") {
         
             steps {
                 script {
@@ -138,13 +149,7 @@ agent any
                         sh "docker login -u hazem1998 -p ${docker_imagePWD}"
                     sh 'docker image push hazem1998/$JOB_NAME:v1.$BUILD_ID'
                     sh 'docker image push hazem1998/$JOB_NAME:latest '}
-                    
-                  
-                    
-                    
-                    
-          
-                }
+         }
             
             }
         
