@@ -8,7 +8,7 @@ CMD mvn spring-boot:run
 
 FROM openjdk:11.0
 WORKDIR /spring-app
-COPY --from=build /app/target/tpAchatProject.jar /spring-app/
+COPY --from=build /app/target/tpAchatProject-1.0.jar /spring-app/
 EXPOSE 9090
 CMD ["java","jar","tpAchatProject.jar"]
 
