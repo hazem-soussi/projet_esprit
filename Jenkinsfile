@@ -134,13 +134,16 @@ agent any
         
             steps {
                 script {
-                withCredentials([string(credentialsId: 'docker-hub', variable: 'docker_hub_cred')]) {
-                 sh 'docker login -u hazem1998 -p $(docker_hub)'
-                 sh 'docker image push hazem1998/$JOB_NAME:v1.$BUILD_ID'
-                 sh 'docker image push hazem1998/$JOB_NAME:latest '
-
-}
-                
+                    
+                    
+                    withCredentials([string(credentialsId: 'docker-hub', variable: 'docker_auth')]) {
+                    sh 'docker login -u hazem1998 -p $(docker_hub)'
+                    sh 'docker image push hazem1998/$JOB_NAME:v1.$BUILD_ID'
+                    sh 'docker image push hazem1998/$JOB_NAME:latest '}
+                    
+                    
+                    
+          
                 }
             
             }
