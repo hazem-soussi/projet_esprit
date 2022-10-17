@@ -135,7 +135,7 @@ agent any
             steps {
                 script {
                     withCredentials([string(credentialsId: 'docker_password', variable: 'docker_imagePWD')]) {
-                        sh "docker login -u hazem1998 -p ${docker_auth}"
+                        sh "docker login -u hazem1998 -p ${docker_imagePWD}"
                     sh 'docker image push hazem1998/$JOB_NAME:v1.$BUILD_ID'
                     sh 'docker image push hazem1998/$JOB_NAME:latest '}
                     
