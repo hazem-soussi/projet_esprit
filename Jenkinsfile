@@ -72,7 +72,7 @@ agent any
                     withSonarQubeEnv(credentialsId: 'sonar_hazoum', installationName: 'sonarqube_server') {
                 //    withSonarQubeEnv(credentialsId: 'hazem_esprit') {
     // some block
-                   // }
+                    }
                 
                 
                 }
