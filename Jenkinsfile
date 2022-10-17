@@ -130,6 +130,25 @@ agent any
         }
         
         
+        stage ("Push image to dockerHUb") {
+        
+            steps {
+                script {
+                withCredentials([string(credentialsId: 'docker-hub', variable: 'docker_hub_cred')]) {
+                 sh 'docker login -u hazem1998 -p $(docker_hub_cred)'
+                 sh 'docker image push hazem1998/$JOB_NAME:v1.$BUILD_ID'
+                 sh 'docker image push hazem1998/$JOB_NAME:latest '
+
+}
+                
+                }
+            
+            }
+        
+        
+        }
+        
+        
              //stage("6th stage : packaging & deploy stage ") {
     //   steps
         // {
