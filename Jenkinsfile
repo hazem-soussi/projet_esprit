@@ -151,17 +151,7 @@ agent any
         
         }
         
-        
-          post { 
-            always {
-
-                mail bcc: '',         
-                body: "${env.BUILD_URL} has result ${currentBuild.result}", 
-                subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
-                to: 'hazem.soussi@esprit.tn'
-            }
-        }
-        
+    
         
              //stage("6th stage : packaging & deploy stage ") {
     //   steps
@@ -244,6 +234,17 @@ agent any
     
     
     
+    }
+    
+    
+      post { 
+            always {
 
+                mail bcc: '',         
+                body: "${env.BUILD_URL} has result ${currentBuild.result}", 
+                subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
+                to: 'khawla.benmansour6@gmail.com'
+            }
+        }
 }
 
