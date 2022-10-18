@@ -237,7 +237,7 @@ agent any
     }
     
     
-      post { 
+     /* post { 
             always {
 
                 mail bcc: '',         
@@ -245,6 +245,6 @@ agent any
                 subject: "Status of pipeline: ${currentBuild.fullDisplayName}",
                 to: 'khawla.benmansour6@gmail.com'
             }
-        }
+        }*/
 }
 
