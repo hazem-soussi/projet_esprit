@@ -6,7 +6,7 @@ agent any
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "192.168.149.136:8081"
-        NEXUS_REPOSITORY = "esprit-app"
+        NEXUS_REPOSITORY = "espritci"
         NEXUS_CREDENTIAL_ID = "nexus_auth"
     }
     
@@ -17,7 +17,7 @@ agent any
         stage ("1st stage : Git checkout PLEAASE"){
             steps{
         git branch: 'main', 
-            url: 'https://github.com/hazem-soussi/projet_esprit.git'
+            url: 'https://github.com/hazem-soussi/projet_esprit'
             }
         
         }
