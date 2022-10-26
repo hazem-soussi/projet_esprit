@@ -59,7 +59,7 @@ pipeline {
         
             steps {
                 script {
-                    withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
+                    withCredentials([string(credentialsId: 'dockerhubpwdd', variable: 'dockerhubpwd')]) {
                         sh "docker login -u sarahch -p ${dockerhubpwd}"
                     sh 'docker push sarah/springapp:$BUILD_NUMBER'
                     }
