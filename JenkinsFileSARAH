@@ -11,6 +11,11 @@ pipeline {
         NEXUS_REPOSITORY = "nexus-repo"
 
         NEXUS_CREDENTIAL_ID = "adminNexus"
+        
+        
+        registry = "sarah/spring"
+        registryCredentials='dockerHub'
+        dockerImage= ' '
 
       }
     stages{
@@ -46,6 +51,23 @@ pipeline {
              }
     
      }
+     
+     
+     
+     
+      stage ("Push image to dockerHUb") {
+        
+            steps {
+                script {
+                    withCredentials([string(credentialsId: 'dockerhubpwd', variable: 'dockerhubpwd')]) {
+                        sh "docker login -u sarahch -p ${dockerhubpwd}"
+                    sh 'docker push sarah/springapp:$BUILD_NUMBER'
+                    }
+          
+                }
+            
+            }
+        
     
     
     
