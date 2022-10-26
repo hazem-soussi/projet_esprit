@@ -46,7 +46,7 @@ pipeline {
     
              stage("stage7: Build images") {
           steps {
-              sh 'docker build -t sarah/springapp:$BUILD_NUMBER .'
+              sh 'docker build -t sarahch/springrepo:$BUILD_NUMBER .'
               
              }
     
@@ -61,7 +61,7 @@ pipeline {
                 script {
                     withCredentials([string(credentialsId: 'dockerID', variable: 'dockervar')]){
                         sh "docker login -u sarahch -p ${dockervar}"
-                    sh 'docker push sarah/springapp:$BUILD_NUMBER'
+                    sh 'docker push sarahch/springrepo:$BUILD_NUMBER'
                     }
           
                 }
