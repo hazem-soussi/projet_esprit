@@ -14,7 +14,7 @@ services:
   app:
     depends_on:
       - mysqldb
-    image: sarah/springapp:$BUILD_NUMBER
+    image: sarahch/springrepo:$BUILD_NUMBER
     restart: on-failure
     env_file: ./.env
     ports:
